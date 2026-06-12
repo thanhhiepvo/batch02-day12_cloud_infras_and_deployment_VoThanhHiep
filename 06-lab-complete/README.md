@@ -43,21 +43,53 @@ Kết hợp TẤT CẢ những gì đã học trong 1 project hoàn chỉnh.
 ## Chạy Local
 
 ```bash
-# 1. Setup
-cp .env.example .env
+cd 06-lab-complete
 
-# 2. Chạy với Docker Compose
-docker compose up
+# 1. Copy env (đã có .env.local mẫu sẵn)
+cp .env.example .env.local   # chỉnh AGENT_API_KEY nếu cần
 
-# 3. Test
+# 2. Chạy full stack: 3 agents + Redis + Nginx
+docker compose up -d --scale agent=3 --build
+
+# 3. Test tự động
+python3.12 test_lab_complete.py
+python3.12 check_production_ready.py
+
+# 4. Test thủ công
 curl http://localhost/health
-
-# 4. Lấy API key từ .env, test endpoint
-API_KEY=$(grep AGENT_API_KEY .env | cut -d= -f2)
-curl -H "X-API-Key: $API_KEY" \
+curl -H "X-API-Key: lab-complete-secret-key" \
      -X POST http://localhost/ask \
      -H "Content-Type: application/json" \
      -d '{"question": "What is deployment?"}'
+
+# 5. Dừng stack
+docker compose down
+```
+
+## Public URLs (Deployment)
+
+| Deploy | URL | API Key |
+|--------|-----|---------|
+| **Part 6 — Railway (LIVE)** | https://courageous-playfulness-production-a67c.up.railway.app | `lab-complete-secret-key` |
+| **Part 6 — Render** | Blueprint `06-lab-complete/render.yaml` | Auto-generated on dashboard |
+
+```bash
+curl https://courageous-playfulness-production-a67c.up.railway.app/health
+curl -H "X-API-Key: lab-complete-secret-key" \
+  -X POST https://courageous-playfulness-production-a67c.up.railway.app/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is cloud deployment?"}'
+```
+
+```bash
+# Deploy Part 6 lên Railway (từ 06-lab-complete/)
+railway login
+railway link -p <project-id> -e production
+railway variables set AGENT_API_KEY=your-secret-key
+railway variables set ENVIRONMENT=production
+railway variables set JWT_SECRET=your-jwt-secret
+railway up
+railway domain
 ```
 
 ---

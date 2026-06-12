@@ -1,6 +1,7 @@
 """Production config — 12-Factor: tất cả từ environment variables."""
 import os
 import logging
+import uuid
 from dataclasses import dataclass, field
 
 
@@ -15,6 +16,9 @@ class Settings:
     # App
     app_name: str = field(default_factory=lambda: os.getenv("APP_NAME", "Production AI Agent"))
     app_version: str = field(default_factory=lambda: os.getenv("APP_VERSION", "1.0.0"))
+    instance_id: str = field(
+        default_factory=lambda: os.getenv("INSTANCE_ID", f"instance-{uuid.uuid4().hex[:6]}")
+    )
 
     # LLM
     openai_api_key: str = field(default_factory=lambda: os.getenv("OPENAI_API_KEY", ""))
@@ -29,12 +33,12 @@ class Settings:
 
     # Rate limiting
     rate_limit_per_minute: int = field(
-        default_factory=lambda: int(os.getenv("RATE_LIMIT_PER_MINUTE", "20"))
+        default_factory=lambda: int(os.getenv("RATE_LIMIT_PER_MINUTE", "10"))
     )
 
     # Budget
-    daily_budget_usd: float = field(
-        default_factory=lambda: float(os.getenv("DAILY_BUDGET_USD", "5.0"))
+    monthly_budget_usd: float = field(
+        default_factory=lambda: float(os.getenv("MONTHLY_BUDGET_USD", "10.0"))
     )
 
     # Storage
