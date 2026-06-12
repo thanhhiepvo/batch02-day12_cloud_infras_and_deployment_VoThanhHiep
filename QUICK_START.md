@@ -304,13 +304,13 @@ export $(cat .env | xargs)
 
 After Quick Start, you should be able to:
 
-- [ ] Run Python app locally
-- [ ] Build Docker image
-- [ ] Run Docker container
-- [ ] Deploy to Railway
-- [ ] Access public URL
-- [ ] Add API authentication
-- [ ] Test with curl
+- [x] Run Python app locally
+- [x] Build Docker image
+- [x] Run Docker container
+- [x] Deploy to Railway
+- [x] Access public URL
+- [x] Add API authentication
+- [x] Test with curl
 
 If you checked all boxes, you're ready for the full lab! 🚀
 
@@ -379,14 +379,14 @@ Quick Start
 └─ [✓] Add security
 
 Full Lab
-├─ [ ] Part 1: Localhost vs Production
-├─ [ ] Part 2: Docker
-├─ [ ] Part 3: Cloud Deployment
-├─ [ ] Part 4: API Security
-├─ [ ] Part 5: Scaling & Reliability
-└─ [ ] Part 6: Final Project
+├─ [x] Part 1: Localhost vs Production
+├─ [x] Part 2: Docker
+├─ [x] Part 3: Cloud Deployment
+├─ [x] Part 4: API Security
+├─ [x] Part 5: Scaling & Reliability
+└─ [x] Part 6: Final Project
 
-Status: 4/10 complete (40%)
+Status: 10/10 complete (100%)
 ```
 
 ---

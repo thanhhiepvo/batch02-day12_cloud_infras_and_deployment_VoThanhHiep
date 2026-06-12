@@ -1,7 +1,11 @@
 # Day 12 — Solution (Parts 1–5)
 
-**Student:** Vo Thanh Hiep  
-**Repository:** `batch02-day12_cloud_infras_and_deployment_VoThanhHiep`
+| | |
+|---|---|
+| **Họ và tên** | Võ Thanh Hiệp |
+| **MSSV** | 2A202600836 |
+| **Repository** | `batch02-day12_cloud_infras_and_deployment_VoThanhHiep` |
+| **Báo cáo đầy đủ** | Xem `REPORT.md` |
 
 ---
 

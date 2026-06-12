@@ -1,7 +1,8 @@
 #  Delivery Checklist — Day 12 Lab Submission
 
-### 1. File Solution.md
+### 1. File Solution.md + REPORT.md
   - [x] Đáp án các bài codelab từ 1->5 → `Solution.md`
+  - [x] Báo cáo lab → `REPORT.md` (Võ Thanh Hiệp — 2A202600836)
 
 ### 2. Project - Lab Assiggment
   - [x] Production agent trong `06-lab-complete/` (mock LLM agent + full productionization)

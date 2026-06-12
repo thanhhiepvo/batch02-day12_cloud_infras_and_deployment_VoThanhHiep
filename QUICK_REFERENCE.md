@@ -652,18 +652,18 @@ FROM python:3.11-alpine
 
 ## 🎓 12-Factor App Checklist
 
-- [ ] **I. Codebase:** One codebase tracked in Git
-- [ ] **II. Dependencies:** Explicitly declare (requirements.txt)
-- [ ] **III. Config:** Store in environment variables
-- [ ] **IV. Backing services:** Treat as attached resources
-- [ ] **V. Build, release, run:** Strictly separate stages
-- [ ] **VI. Processes:** Execute as stateless processes
-- [ ] **VII. Port binding:** Export services via port binding
-- [ ] **VIII. Concurrency:** Scale out via process model
-- [ ] **IX. Disposability:** Fast startup and graceful shutdown
-- [ ] **X. Dev/prod parity:** Keep environments similar
-- [ ] **XI. Logs:** Treat logs as event streams
-- [ ] **XII. Admin processes:** Run as one-off processes
+- [x] **I. Codebase:** One codebase tracked in Git
+- [x] **II. Dependencies:** Explicitly declare (requirements.txt)
+- [x] **III. Config:** Store in environment variables
+- [x] **IV. Backing services:** Treat as attached resources
+- [x] **V. Build, release, run:** Strictly separate stages
+- [x] **VI. Processes:** Execute as stateless processes
+- [x] **VII. Port binding:** Export services via port binding
+- [x] **VIII. Concurrency:** Scale out via process model
+- [x] **IX. Disposability:** Fast startup and graceful shutdown
+- [x] **X. Dev/prod parity:** Keep environments similar
+- [x] **XI. Logs:** Treat logs as event streams
+- [x] **XII. Admin processes:** Run as one-off processes
 
 ---
 
