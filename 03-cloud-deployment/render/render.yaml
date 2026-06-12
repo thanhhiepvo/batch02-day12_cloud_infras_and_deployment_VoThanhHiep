@@ -44,8 +44,11 @@ services:
   # ──────────────────────────────────────
   - type: redis
     name: agent-cache
+    region: singapore
     plan: free
     maxmemoryPolicy: allkeys-lru
+    # Required by Render — block external access; same-region services use internal URL
+    ipAllowList: []
 
 # ============================================================
 # Cách deploy:
