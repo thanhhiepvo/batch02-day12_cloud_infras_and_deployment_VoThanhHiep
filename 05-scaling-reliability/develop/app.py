@@ -26,7 +26,7 @@ from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 import uvicorn
 from utils.mock_llm import ask
 
@@ -91,9 +91,13 @@ def root():
 
 
 @app.post("/ask")
-async def ask_agent(question: str):
+async def ask_agent(request: Request):
     if not _is_ready:
         raise HTTPException(503, "Agent not ready")
+    body = await request.json()
+    question = body.get("question", "")
+    if not question:
+        raise HTTPException(422, "question required")
     return {"answer": ask(question)}
 
 
